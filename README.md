@@ -14,17 +14,6 @@ Deployed Link
 
 https://cyraneous.github.io/hwk-6-weather-dashboard/
 
-
-App Demo
-User Input - click search
-User Input
-
-Displayed City Search
-Display Search
-
-Saved Recent Searches
-Save Search
-
 Technologies Used
 JavaScript
 OpenWeather API
