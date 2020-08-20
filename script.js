@@ -53,13 +53,15 @@ function makeList() {
 }
 
 function getCurrentConditions(response) {
-  // get the temperature and convert to fahrenheit
+  // Get temp and convert to F
+
   let tempF = (response.main.temp - 273.15) * 1.8 + 32;
   tempF = Math.floor(tempF);
 
   $("#currentCity").empty();
 
-  // get and set the content
+  // Get and set the content
+
   const card = $("<div>").addClass("card");
   const cardBody = $("<div>").addClass("card-body");
   const city = $("<h4>").addClass("card-title").text(response.name);
@@ -81,12 +83,12 @@ function getCurrentConditions(response) {
   );
 
   // add to page
+
   city.append(cityDate, image);
   cardBody.append(city, temperature, humidity, wind);
   card.append(cardBody);
   $("#currentCity").append(card);
 }
-
 function getCurrentForecast() {
   $.ajax({
     url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + apiKey,
@@ -135,7 +137,6 @@ function getCurrentForecast() {
             results[i].weather[0].icon +
             ".png"
         );
-
         cardBody.append(cityDate, image, temperature, humidity);
         card.append(cardBody);
         $("#forecast").append(card);
